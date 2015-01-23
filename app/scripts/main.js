@@ -2,6 +2,7 @@
 $(document).ready(onDocumentReady);
 
 function onDocumentReady() {
+	"use strict";
 	var $search = $('#search');
 	var $searchResults = $('#search-results');
 	var $wishList = $('#wish-list');
@@ -36,7 +37,7 @@ function onDocumentReady() {
 
 	function onMovieInfo(data) {
 		var $button = $('<button type="button" class="btn btn-default">Watched</button>');
-		var $append = $('<tr><td>'+data.Title+'</td><td>'+data.Year+'</td><td>'+data.Genre+'</td><td>'+data.Runtime+'</td></tr>')
+		var $append = $('<tr><td>'+data.Title+'</td><td>'+data.Year+'</td><td>'+data.Genre+'</td><td>'+data.Runtime+'</td></tr>');
 		$append.append($button);
 		$wishList.append($append);
 

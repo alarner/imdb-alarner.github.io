@@ -49,14 +49,14 @@ gulp.task('html', ['devStyles'], function () {
     .pipe(gulp.dest('/Users/alarner/Projects/alarner.github.io/projects/imdb'));
 });
 
-// gulp.task('images', function () {
-//   return gulp.src('app/images/**/*')
-//     .pipe($.cache($.imagemin({
-//       progressive: true,
-//       interlaced: true
-//     })))
-//     .pipe(gulp.dest('/Users/alarner/Projects/alarner.github.io/projects/imdb/images'));
-// });
+gulp.task('images', function () {
+  return gulp.src('app/images/**/*')
+    // .pipe($.cache($.imagemin({
+    //   progressive: true,
+    //   interlaced: true
+    // })))
+    .pipe(gulp.dest('/Users/alarner/Projects/alarner.github.io/projects/imdb/images'));
+});
 
 gulp.task('fonts', function () {
   return gulp.src(require('main-bower-files')().concat('app/fonts/**/*'))
@@ -120,7 +120,7 @@ gulp.task('wiredep', function () {
     .pipe(gulp.dest('app'));
 });
 
-gulp.task('build', ['jshint', 'html', /*'images',*/ 'fonts', 'extras', 'distStyles'], function () {
+gulp.task('build', ['jshint', 'html', 'images', 'fonts', 'extras', 'distStyles'], function () {
   return gulp.src('/Users/alarner/Projects/alarner.github.io/projects/imdb/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
